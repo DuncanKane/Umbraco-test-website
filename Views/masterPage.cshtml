@@ -1,0 +1,36 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+	Layout = null;
+}
+
+@* the fun starts here *@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <link href="https://fonts.googleapis.com/css?family=Teko&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Welcome</title>
+    
+</head>
+<!-- The sidebar -->
+<div class="sidebar">
+    <a href="/HomePage"><i class="fa fa-fw fa-home"></i></a>
+    <a href="/en/contact"><i class="fa fa-fw fa-envelope"></i></a>
+    <a href="/Articles"><i class="fa fa-fw fa-user"></i></a>
+    <a href="/about"><i class="fa fa-fw fa-wrench"></i></a>
+    <a href="/Content"><i class="fa fa-fw fa-address-book"></i></a>
+    <a href="/Location"><i class="fa fa-fw fa-area-chart"></i></a>
+    <a href="/Updates"><i class="fa fa-fw fa-save"></i></a>
+  </div>
+  <body background="../img/damnation.jpg"></body>
+  @RenderBody()
+  
+  <footer>
+        <h3>
+        <span>@Model.Value("footerText", fallback: Fallback.ToAncestors)</span>
+        </h3>
+  </footer>

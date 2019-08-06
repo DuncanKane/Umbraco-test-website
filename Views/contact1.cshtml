@@ -1,0 +1,12 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+    Layout = "masterPage.cshtml";
+}
+
+@* the fun starts here *@
+
+    <div class="container">
+        
+        @{Html.RenderAction("RenderForm", "ContactSurface");}
+
+    </div>

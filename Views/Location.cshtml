@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Location>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+	Layout = "masterPage.cshtml";
+}
+
+<section id="main" class="wrapper">
+    <div class="container">
+
+        <header class="major special">
+            <h2>@Model.Value("locationTitle")</h2>
+        </header>
+        <map>@Model.Value("map")</map>
+        <a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
+        <h3>@Model.Value("peeper")</h3>
+
+    </div>
+</section>

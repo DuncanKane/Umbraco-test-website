@@ -1,0 +1,35 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ArticlesMain>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+	Layout = "masterPage.cshtml";
+}
+<section id="main" class="wrapper">
+    <div class="container">
+
+        <header class="major special">
+            <h2>@Model.Value("articlesTitle")</h2>
+        </header>
+
+        <a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
+        <h3>@Model.Value("articlesBodyText")</h3>
+
+    </div>
+@{
+	var selection = Umbraco.Content(Guid.Parse("f52ce0ca-8c0b-486a-a994-c52a273ba8a0"))
+    .ChildrenOfType("articlesItem")
+    .Where(x => x.IsVisible())
+    .OrderByDescending(x => x.CreateDate);
+}
+<ul>
+	@foreach (var item in selection)
+	{
+	<div class="article">
+        <div class="articletitle"><a href="@item.Url">@item.Name</a></div>
+        <div class="articlepreview">@item.Value("articleContent").ToString().Truncate(100) <a href="@item.Url">Read More..</a></div>
+    </div>
+    <hr/>
+	}
+</ul>
+
+
+</section>

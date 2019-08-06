@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.UpdatesItem>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+	Layout = "masterPage.cshtml";
+}
+<section id="main" class="wrapper">
+    <div class="container">
+
+        <header class="major special">
+            <h2>@Model.Value("updateTitle")</h2>
+        </header>
+
+        <a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
+        <h3>@Model.Value("updateContent")</h3>
+
+    </div>
+</section>
